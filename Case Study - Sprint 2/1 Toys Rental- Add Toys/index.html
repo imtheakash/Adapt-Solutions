@@ -1,45 +1,60 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Add Toys</title>
-  </head>
-  <body>
-    <h2>
-      <span style="background-color: #000080; color: #ff6600;">Add Toys</span>
-    </h2>
-    <table>
-      <tr>
-        <td>Toy Name</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Toy type</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Min-Age</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Max-Age</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Price</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Quantity Available in Stock</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Rental amount per day</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="submit" value="Submit Query" /></td>
-      </tr>
-    </table>
-  </body>
+    <body>
+            <h2><span style='background-color:#000080;color:#ff6600;'>Add Toys</span></h2>
+            <table>
+            <tbody>
+                <tr>
+                    <td>Toy Name</td>
+                    <td><input type='text' id='name'></td>
+                </tr>
+                <tr>
+                    <td>Toy type</td>
+                    <td><input type='text' id='type'></td>
+                </tr>
+                <tr>
+                    <td>Min-Age</td>
+                    <td><input id='minage'></td>
+                </tr>
+                <tr>
+                    <td>Max-Age</td>
+                    <td><input id='maxage'></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type='text' id='price'></td>
+                </tr>
+                <tr>
+                    <td>Quantity Available in Stock</td>
+                    <td><input type='text' id='stock'></td>
+                </tr>
+                <tr>
+                    <td>Rental amount per day</td>
+                    <td><input type='text' id='amount'></td>
+                </tr>
+                <tr>
+                    <td><input type='button' value='Sumbit Query' onclick='Validation()'></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            function Validation()
+            {
+                var name=document.getElementById('name').value
+                var type=document.getElementById('type').value
+                var price=document.getElementById('price').value
+                var stock=document.getElementById('stock').value
+                var amount=document.getElementById('amount').value
+                if(name.length>=3 && type.length>=5 && !isNaN(price) && !isNaN(stock) && price>0 && stock>0 && amount>=5)
+                {
+                    alert('Valid')
+                    return true
+                }
+                else
+                {
+                    alert('Invalid')
+                    return false
+                }
+            }
+        </script>
+    </body>
 </html>
